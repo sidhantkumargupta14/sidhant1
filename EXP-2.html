@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Bank</title>
+</head>
+<body>
+
+    <h2> Banking UI</h2>
+
+    <h3>Balance: ₹<span id="balance">0</span></h3>
+
+    <input type="number" id="amount" placeholder="Enter amount">
+    <br><br>
+
+    <button onclick="deposit()">Deposit</button>
+    <button onclick="withdraw()">Withdraw</button>
+
+    <script>
+        let balance = 0;
+
+        function deposit() {
+            let amt = document.getElementById("amount").value;
+            balance = balance + Number(amt);
+            document.getElementById("balance").innerText = balance;
+            document.getElementById("amount").value = "";
+        }
+
+        function withdraw() {
+            let amt = document.getElementById("amount").value;
+            if (Number(amt) <= balance) {
+                balance = balance - Number(amt);
+                document.getElementById("balance").innerText = balance;
+            } else {
+                alert("Insufficient balance");
+            }
+            document.getElementById("amount").value = "";
+        }
+    </script>
+
+</body>
+</html>
