@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #f0f0f0;
+        }
+
+        .dark {
+            background: #222;
+            color: white;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 50px 1fr;
+            height: 100vh;
+        }
+
+        .sidebar {
+            background: #333;
+            color: white;
+            padding: 15px;
+        }
+
+        .header {
+            background: #ddd;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .dark .header {
+            background: #444;
+        }
+
+        .main {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .dark .card {
+            background: #333;
+        }
+
+        button {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="dashboard">
+
+    <div class="sidebar">Menu</div>
+
+    <div class="header">
+        <b>Dashboard</b>
+        <button onclick="toggle()">Theme</button>
+    </div>
+
+    <div></div>
+
+    <div class="main">
+        <div class="card">Users</div>
+        <div class="card">Sales</div>
+        <div class="card">Orders</div>
+    </div>
+
+</div>
+
+<script>
+    function toggle() {
+        document.body.classList.toggle("dark");
+    }
+</script>
+</body>
+</html>
